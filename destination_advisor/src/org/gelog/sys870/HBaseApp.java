@@ -66,8 +66,8 @@ public class HBaseApp
         System.out.println("Using HBase client to connect to the ZooKeeper Quorum ...");
         conn	= ConnectionFactory.createConnection( conf );
     	locateTable( conn, "hbase:meta" );
-    	locateTable( conn, "table1" );
-    	locateTable( conn, "default:table1" );
+    	locateTable( conn, "testTable" );
+    	locateTable( conn, "default:testTable" );
     	
     	createTable( conn );
     	
@@ -151,7 +151,7 @@ public class HBaseApp
     	
     	tableNameH	= TableName.valueOf( tableName );
     	startRow	= null;
-    	locations	= connection.getRegionLocator(tableNameH).getAllRegionLocations();
+    	locations	= connection.getRegionLocator(tableNameH).getAllRegionLocations(); //.getAllRegionLocations()
     	
     	for (HRegionLocation location : locations) {
 			host		= location.getHostnamePort();

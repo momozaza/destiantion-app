@@ -82,5 +82,5 @@
       </dependencies>
     </profile>
   </profiles>
-  <artifactId>test-app</artifactId>
+  <artifactId>destination-advisor</artifactId>
 </project>
